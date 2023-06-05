@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>結果</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #f3e7e9, #e3d0d5);
+        }
+        .content {
+            text-align: center;
+        }
+        .student-id {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            background: #87ceeb;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="student-id">1091516 HW3 WEBLOGO</div>
+    <div class="content">
+        <h1>圖片結果</h1>
+        <img src="{{ url_for('static', filename=image_file) }}" alt="圖片結果">
+        <br><br>
+        <form action="/download" method="post">
+            <input type="hidden" name="filename" value="result.jpg">
+            <input type="submit" name="extension" value="下載為PNG">
+            <input type="submit" name="extension" value="下載為JPEG">
+            <input type="submit" name="extension" value="下載為SVG">
+        </form>
+    </div>
+</body>
+</html>
